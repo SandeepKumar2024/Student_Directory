@@ -1,0 +1,15 @@
+
+
+
+
+
+
+# Ignore a specific directory and its contents
+node_modules/
+
+/.env
+
+
+
+# Ignore all files in the root directory except .gitignore
+
