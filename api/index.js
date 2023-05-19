@@ -1,19 +1,9 @@
-// //verify the email address
-// function verifyEmail(email) {
-//   let pattern = /@aec\.ac\.in$/;
-
-//   //exatrct
-//   let domain = email.match(pattern);
-
-//   return domain ? domain[0] : null;
-// }
-
-// const email = "sandeep@aec.ac.in";
-// console.log(verifyEmail(email));
-
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const authRouter = require("./routes/auth/verifyemailRoute");
+const dotenv = require("dotenv");
+dotenv.config();
 
 //middlware
 app.use(express.json());
@@ -22,6 +12,16 @@ app.use("/user/auth", authRouter);
 app.get("/", () => {
   console.log("hello");
 });
+
+//db connection
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("DB connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.listen(8800, () => {
   console.log("Server is running");
