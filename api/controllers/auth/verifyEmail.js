@@ -21,7 +21,7 @@ const generateOtp = () => {
   return otp;
 };
 
-const otpExpireIn = 2 * 60 * 1000; // 2 minutes
+const otpExpireIn = 1 * 60 * 1000; // 2 minutes
 
 const verifyEmail = async (req, res) => {
   try {
@@ -37,7 +37,12 @@ const verifyEmail = async (req, res) => {
       //if there is alredy user
       const findUser = await userEmail.findOne({ email: email });
       if (findUser) {
-        await userEmail.findOneAndUpdate({ email: email, otp: otp, new: true });
+        await userEmail.findOneAndUpdate({
+          email: email,
+          otp: otp,
+          cretedDate: new Date(),
+          new: true,
+        });
       } else {
         const user = new userEmail({
           email: email,
@@ -106,7 +111,7 @@ const verifybyOtp = async (req, res) => {
     // const otpTime = user.createdAt
     //   ? new Date(user.createdAt).getTime()
     //   : new Date(user.updatedAt).getTime();
-    const otpTime = new Date(user.updatedAt).getTime();
+    const otpTime = new Date(user.cretedDate).getTime();
     // const otpExpireIn = 60000; // Example value, should be replaced with the actual expiry duration in milliseconds
     console.log(currentTime - otpTime);
     console.log(otpExpireIn);
@@ -119,6 +124,7 @@ const verifybyOtp = async (req, res) => {
     //update
     user.isVerified = true;
     user.otp = null;
+    user.cretedDate = null;
     await user.save();
     return res.status(200).json({
       message: "Email verified succesfully",
