@@ -1,0 +1,40 @@
+.verify{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(157, 157, 165);
+        width: max-content;
+        height: max-content;
+        padding: 50px;
+
+        label{
+            font-size: 25px;
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        button{
+            width: 50%;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            align-self: center;
+            border-radius: 10px;
+        }
+    }
+}
