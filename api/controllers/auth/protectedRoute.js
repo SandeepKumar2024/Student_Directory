@@ -32,9 +32,9 @@ const verifyTokenandAdmin = (req, res, next) => {
   });
 };
 
-// const superAdmin = (req,res,next)=>{
-//     const
-// }
+const superAdmin = (req,res,next)=>{
+    
+}
 
 module.exports = {
   verifyUserToken,
