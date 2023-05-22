@@ -21,6 +21,8 @@ const verifyUserToken = (req, res, next) => {
   }
 };
 
+
+//check user is admin or not
 const verifyTokenandAdmin = (req, res, next) => {
   verifyUserToken(req, res, () => {
     if (req.user.isAdmin) {
@@ -31,6 +33,7 @@ const verifyTokenandAdmin = (req, res, next) => {
     }
   });
 };
+
 
 const superAdmin = (req,res,next)=>{
     

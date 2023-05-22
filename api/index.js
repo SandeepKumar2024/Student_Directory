@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const authRouter = require("./routes/auth/verifyemailRoute");
 const userRouter = require("./routes/auth/userRoute");
+const filterRouter = require("./routes/filterUser/userFilter");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(cookieParser({ httpOnly: true }));
 app.use("/user/auth", authRouter);
 app.use("/user", userRouter);
+app.use("/student", filterRouter);
 //testing purpose
 app.get("/", () => {
   console.log("hello");
