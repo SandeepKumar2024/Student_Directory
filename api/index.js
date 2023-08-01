@@ -15,7 +15,7 @@ app.use(cors());
 app.use(cookieParser({ httpOnly: true }));
 app.use("/user/auth", authRouter);
 app.use("/user", userRouter);
-app.use("/student", filterRouter);
+app.use("/", filterRouter);
 //testing purpose
 app.get("/", () => {
   console.log("hello");

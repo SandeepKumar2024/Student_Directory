@@ -4,15 +4,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url("https://www.aec.ac.in/static/media/aec-banner-main.91cf0ae4.jpg") center  ;
+    background-size: cover;
     
     form{
         display: flex;
         flex-direction: column;
         gap: 20px;
-        background-color: rgb(157, 157, 165);
+        background-color: rgb(212, 212, 212);
         width: max-content;
         height: max-content;
         padding: 50px;
+        border-radius: 10px;
+        box-shadow: 5px 10px 10px 5px rgba(47, 45, 45, 0.5);
 
         label{
             font-size: 25px;

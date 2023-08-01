@@ -56,8 +56,7 @@ const userLogin = async (req, res) => {
     //jwt token generate
     const token = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin, email: user.email },
-      process.env.JWT_KEY,
-      { expiresIn: "1h" }
+      process.env.JWT_KEY
     );
 
     //store token  in cookie
@@ -65,6 +64,7 @@ const userLogin = async (req, res) => {
 
     return res.status(200).json({
       message: "Logged in succsefully",
+      user,
       token,
     });
   } catch (error) {
@@ -143,6 +143,19 @@ const createUser = async (req, res) => {
   }
 };
 
+//get one student
+const getOneStudent = async (req, res) => {
+  const id = req.params.id;
+
+  const student = await Student.findById(id);
+
+  if (!student) {
+    return res.status(404).json("Student no found");
+  }
+
+  return res.status(200).json(student);
+};
+
 //student update
 const studentUpdate = async (req, res) => {
   try {
@@ -152,7 +165,7 @@ const studentUpdate = async (req, res) => {
     });
 
     return res.status(200).json({
-      message: "Updated",
+      message: "Succefully",
       student,
     });
   } catch (error) {
@@ -168,7 +181,7 @@ const studentDelete = async (req, res) => {
 
     await Student.findByIdAndDelete(studentId);
     return res.status(200).json({
-      message: "Deleted",
+      message: "Deleted succesfully",
     });
   } catch (error) {
     console.log(error);
@@ -182,4 +195,5 @@ module.exports = {
   createUser,
   studentUpdate,
   studentDelete,
+  getOneStudent,
 };

@@ -19,6 +19,7 @@
     "mongoose": "^7.1.2",
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
-    "speakeasy": "^2.0.0"
+    "speakeasy": "^2.0.0",
+    "universal-cookie": "^4.0.4"
   }
 }

@@ -5,26 +5,62 @@ const getStudent = async (req, res) => {
     const query = req.query;
 
     const filter = {};
+
+    //filter using name
     if (query.name) {
       filter.name = { $regex: query.name, $options: "i" };
     }
+    //filter using course eg CSE ,Mech
     if (query.course) {
-      filter.course = { $regex: query.course, $options: "i" };
+      const courses = Array.isArray(query.course)
+        ? query.course
+        : [query.course];
+      filter.course = { $in: courses.map((course) => new RegExp(course, "i")) };
+      // filter.course = { $regex: query.course, $options: "i" };
     }
-    if (query.enrollYear) {
-      const startDate = `${query.enrollYear}-01-01`;
-      const endDate = `${query.enrollYear }-12-01`;
-      filter.courseEnroll = {
-        $gte: new Date(startDate),
-        $lt: new Date(endDate),
-      };
-    }
-    if (query.currentSemester) {
-      filter.currentSemester = { $regex: query.currentSemester, $options: "i" };
-    }
-    const students = await Student.find(filter);
 
-    //filtering by name
+    //filter using enroll year
+    // if (query.enrollYear) {
+    //   const startDate = `${query.enrollYear}-01-01`;
+    //   const endDate = `${query.enrollYear}-12-01`;
+    //   filter.courseEnroll = {
+    //     $gte: new Date(startDate),
+    //     $lt: new Date(endDate),
+    //   };
+    // }
+
+    if (query.enrollYear) {
+      const enrollYears = Array.isArray(query.enrollYear)
+        ? query.enrollYear
+        : [query.enrollYear];
+
+      const enrollYearFilter = enrollYears.map((year) => {
+        const startDate = `${year}-01-01`;
+        const endDate = `${year}-12-01`;
+        return {
+          courseEnroll: {
+            $gte: new Date(startDate),
+            $lte: new Date(endDate),
+          },
+        };
+      });
+
+      filter.$or = enrollYearFilter;
+    }
+
+    //filter using current sem
+    if (query.currentSemester) {
+      const currentSem = Array.isArray(query.currentSemester)
+        ? query.currentSemester
+        : [query.currentSemester];
+      filter.currentSemester = {
+        $in: currentSem.map((sem) => new RegExp(sem, "i")),
+      };
+      // filter.currentSemester = { $regex: query.currentSemester, $options: "i" };
+    }
+
+    //filterd students
+    const students = await Student.find(filter);
 
     return res.status(200).send({
       size: students.length,

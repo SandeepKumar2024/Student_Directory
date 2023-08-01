@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./emailVerify.scss";
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 

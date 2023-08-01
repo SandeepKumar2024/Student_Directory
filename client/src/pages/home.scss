@@ -1,0 +1,132 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image:linear-gradient(rgba(14, 27, 20, 0.4),rgb(0, 0, 0)), url("https://www.aec.ac.in/static/media/aec-banner-main.91cf0ae4.jpg")   ;
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    @media (max-width:650px) {
+        height: 100vh;
+        width: 100vw;
+        background-image:linear-gradient(rgba(94, 98, 96, 0.2),rgb(26, 25, 25)), url("https://www.aec.ac.in/static/media/aec-banner-main.91cf0ae4.jpg")   ;
+        background-size:cover;
+        background-position:top;
+        position: relative;
+
+        
+    }
+
+
+    .top{
+        display: flex;
+        align-self:flex-end;
+        margin: 40px;
+        align-items: center;
+        gap: 20px;
+        z-index: 999;
+
+        @media (max-width:650px) {
+            display: flex;
+            justify-content: space-around;
+            
+        }
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            @media (max-width:650px) {
+                display: flex;
+               align-self: flex-start;
+                
+            }
+    
+            p{
+                color: white;
+                font-size: 20px;
+
+                
+                
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+
+            }
+        }
+
+        .btn{
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            background-color: orange;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 0px 20px;
+           
+            
+                                 
+        }
+
+
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        @media (max-width:650px) {
+            display: flex;
+            
+        }
+        h1{
+            color: white;
+            font-size: 70px;
+            margin:10px;
+
+            @media (max-width:650px) {
+        
+                font-size: 30px;
+                text-align: center;
+            }
+
+            i{
+                color: rgb(208, 247, 9);
+            }
+        }
+        p{
+            color: white;
+            font-size: 25px;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            i{
+                color: red;
+                // text-decoration: underline;
+            }
+
+        }
+
+    }
+
+   
+}

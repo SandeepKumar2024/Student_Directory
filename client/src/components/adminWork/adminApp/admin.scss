@@ -1,0 +1,239 @@
+.admin{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    // padding: 0px 20px;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    .top{
+        // background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        // height: 200px;
+        flex: 1;
+        gap: 20px;
+
+        @media (max-width:650px) {
+       
+            font-size: 15px;
+            width: 100vw;
+            display: flex;
+             
+         }
+        h1{
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            
+            gap: 10px;
+            color: rgb(94, 89, 89);
+
+            @media (max-width:650px) {
+       
+                font-size: 22px;
+                width: 100vw;
+                background-color: blueviolet;
+                padding: 10px;
+                color: white;
+               
+                 
+             }
+        span{
+            color: orange;
+
+            @media (max-width:650px) {
+       
+                font-size: 22px;
+                width: 100vw;
+                
+                 
+             }
+        }
+            
+            margin: 0px;
+           
+        }
+        p{
+            font-size: 50px;
+            // color: gray;
+            font-weight: bold;
+            margin: 0px;
+            font-size: 50px;
+            margin-right: 10px;
+
+            @media (max-width:650px) {
+       
+                font-size: 18px;
+                width: 100vw;
+                 
+             }
+            i{
+                color: green;
+                font-size: 50px;
+                font-weight: bold;
+
+                @media (max-width:650px) {
+       
+                    font-size: 18px;
+                    width: 100vw;
+                     
+                 }
+            }
+        }
+
+       
+    }
+
+    .bottom{
+      
+        display: flex;
+        // background-color: red;
+        flex: 10; 
+        gap: 100px;
+
+
+
+
+    
+
+
+     .left{
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        background-color: rgba(199, 195, 195, 0.737);
+        border-radius: 10px;
+        
+        // background-color: green;
+
+        @media (max-width:650px) {
+       
+           display: none;
+             
+         }
+
+        ul{
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            
+            // justify-content: center;
+            gap: 50px;
+            height: 100%;
+
+            .icon{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+                padding:  10px;
+                border-radius: 10px;
+
+                .link{
+                    text-decoration: inherit;
+                }
+
+                i{
+                    font-size: 30px;
+                   
+                   
+
+                }
+
+                .fa-regular{
+                    color: blue;
+                }
+
+                .fa-trash{
+                    color: red;
+                }
+
+                .fa-plus{
+                    color: green;
+                }
+                li{
+                    font-size: 30px;
+                    color: rgb(16, 15, 15);
+                    font-weight: 400;
+                }
+
+                &:hover{
+                    background-color: rgb(166, 200, 208);
+                }
+                
+                
+            }
+            
+        }
+
+      
+     }
+
+     .right{
+        flex: 9;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .create{
+            padding: 10px 20px;
+            align-self: flex-end;
+            margin-top: 10px;
+            border: none;
+            background-color: green;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            
+        }
+
+        .rTop{
+            // background-color: rgb(101, 16, 16);
+            width: 80%;
+            padding: 10px;
+            display: flex;
+            gap: 5px;
+
+            @media (max-width:650px) {
+                width:70vw;
+                padding: 5px;
+               margin-right: 20px;
+                 
+             }
+
+            input{
+                flex: 7;
+                padding: 10px;
+                outline: none;
+                font-size: 20px;
+            }
+
+            button{
+                padding: 10px;
+                flex: 1;
+                border: none;
+                background-color: green;
+                border-radius: 5px;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+
+            }
+            
+
+        }
+
+        .bRight{
+            width: 70vw;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+       }
+    }
+  
+}

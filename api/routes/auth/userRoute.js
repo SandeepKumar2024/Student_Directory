@@ -6,6 +6,7 @@ const {
   createUser,
   studentUpdate,
   studentDelete,
+  getOneStudent,
 } = require("../../controllers/auth/registerUserCrtl");
 const {
   verifyUserToken,
@@ -17,12 +18,15 @@ const router = express.Router();
 //user regsitration
 router.post("/register", userRegistration);
 router.post("/login", userLogin);
-router.get("/logout", userLogout);
+router.post("/logout", userLogout);
+
 
 //testing
 router.get("/pro", verifyTokenandAdmin, (req, res) => {
   return res.status(200).json("Hello procted");
 });
+
+router.get("/get/:id",getOneStudent)
 
 //for creating user by admin
 router.post("/create/users", verifyTokenandAdmin, createUser);

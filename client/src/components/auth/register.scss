@@ -1,0 +1,86 @@
+.register{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(7, 7, 7, 0.6), rgba(0, 0, 0, 0.8)), url("https://www.aec.ac.in/static/media/aec-banner-main.91cf0ae4.jpg") center;
+    background-size: cover;
+
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+       gap: 20px;
+       background-color: white;
+       padding: 50px;
+       border-radius: 10px;
+
+       @media (max-width:650px) {
+        
+        width: 50%;
+        height: 70%;
+        padding: 30px;
+        gap: 10px;
+        
+    }
+
+       input{
+        padding: 15px;
+        outline: none;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid gray;
+
+        @media (max-width:650px) {
+        
+           padding: 10px;
+           font-size: 15px;
+            
+        }
+
+        &:focus{
+            border: 1px solid rgb(112, 112, 198);
+           
+        }
+
+       }
+       label{
+        font-size: 25px;
+        color: rgb(60, 58, 58);
+        @media (max-width:650px) {
+        
+            padding: 10px;
+            font-size: 15px;
+             
+         }
+ 
+       }
+
+       button{
+        padding: 15px;
+        background-color: green;
+        border: none;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        @media (max-width:650px) {
+        
+            padding: 10px;
+            font-size: 15px;
+             
+         }
+ 
+
+        :hover{
+            background-color: rgb(9, 69, 9);
+        }
+
+       }
+       
+
+    }
+
+}

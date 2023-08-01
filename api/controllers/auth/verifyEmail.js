@@ -87,11 +87,11 @@ const verifyEmail = async (req, res) => {
 
 const verifybyOtp = async (req, res) => {
   try {
-    const { email, otp } = req.body;
+    const {  otp } = req.body;
     console.log(otp);
 
     //reteive otp
-    const user = await userEmail.findOne({ email: email, otp: otp });
+    const user = await userEmail.findOne({  otp: otp });
     if (!user)
       return res.status(404).json({
         message: "Invalid OTP",

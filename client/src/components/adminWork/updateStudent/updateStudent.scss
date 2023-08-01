@@ -1,0 +1,89 @@
+.updateStudent{
+    height: 100vh;
+    // align-items: center;
+    // justify-content: center;
+    // background: linear-gradient(to right, rgba(7, 7, 7, 0.6), rgba(0, 0, 0, 0.8)), url("https://www.aec.ac.in/static/media/aec-banner-main.91cf0ae4.jpg") center;
+    // background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem;
+        height: 90%;
+        width: 80%;
+      
+       background-color: white;
+
+       border-radius: 10px;
+       border: 1px solid gray;
+
+       .left{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+
+
+
+       }
+
+       .right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+
+       input{
+        padding: 15px;
+        outline: none;
+        font-size: 20px;
+        border: none;
+        border-bottom: 1px solid gray;
+        width: 50%;
+
+        &:focus{
+            border: 1px solid rgb(112, 112, 198);
+           
+        }
+
+       }
+       label{
+        font-size: 25px;
+        color: rgb(60, 58, 58);
+        text-align: left;
+       }
+       textarea{
+        width: 50%;
+    }
+
+       button{
+        padding: 15px;
+        background-color: green;
+        border: none;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        width: 50%;
+        align-self:flex-start;
+        cursor: pointer;
+        margin-top: 20px;
+      
+
+        :hover{
+            background-color: rgb(9, 69, 9);
+        }
+
+       }
+       
+
+    }
+
+}

@@ -24,10 +24,11 @@ const VerifyOtp = () => {
     try {
       e.preventDefault();
       await axios
-        .post("http://localhost:8800/user/auth/verify", { email, otp })
+        .post("http://localhost:8800/user/auth/verify", { otp })
         .then((res) => {
           console.log(res.data);
           setResponse(res.data.message);
+          navigate("/login");
         })
         .catch((error) => {
           setError(error.response.data.message);
@@ -44,14 +45,14 @@ const VerifyOtp = () => {
         <p>{respone}</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="">Email</label>
+          {/* <label htmlFor="">Email</label>
           <input
             type="text"
             placeholder="ReEnter your email..."
             value={email}
             name="email"
             onChange={handleChange}
-          />
+          /> */}
           <label htmlFor="">OTP</label>
           <input
             type="text"

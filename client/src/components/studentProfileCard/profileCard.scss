@@ -1,0 +1,111 @@
+.profileCard{
+    width: 300px;
+    height: 300px;
+    background-color:white;
+    padding: 10px;
+    border: 1px solid rgb(119, 116, 116);
+    border-radius: 7px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    @media (max-width:650px) {
+        width: 240px;
+        margin-left: 20px;
+        height: 250px;
+        gap: 20px;
+        
+    }
+    .view{
+        text-align: right;
+        color: rgb(129, 27, 188);
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        
+    }
+
+    
+    .img{
+        width: 100%;
+        background-color: rgb(164, 205, 209);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 70px;
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .info{
+        margin-top: 20px;
+        span{
+            font-weight: bold;
+            font-size: 25px;
+
+
+        }
+        p{
+            color: gray;
+            font-size: 20px;
+
+        }
+
+        .adminwork{
+            display: flex;
+            gap: 10px;
+
+            button{
+                padding: 5px 20px;
+                border: none;
+                font-size: 18px;
+                border-radius: 10px;
+                cursor: pointer;
+
+                &:nth-child(1){
+                    background-color: green;
+                    color: wheat;
+                }
+                &:last-child{
+                    background-color: red;
+                    color: white;
+                }
+
+
+
+            }
+
+            .delete{
+                position: absolute;
+                background-color: rgb(51, 46, 39);
+                top: 25%;
+                left: 5%;
+                bottom: 0;
+                height: 50%;
+                right: 0;
+                width: 80%;
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+                padding: 10px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                p{
+                    color: wheat;
+                    font-size: 22px;
+                }
+                .deleteBtns{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+                }
+
+            }
+        }
+    }
+    
+
+}
+
